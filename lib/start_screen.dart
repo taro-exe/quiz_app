@@ -9,7 +9,7 @@ class StartScreen extends StatelessWidget {
   Widget build(context) {
     return Center(
       child: Container(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 30,
         ),
         child: Column(

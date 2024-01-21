@@ -44,15 +44,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
               ),
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.getShuffledAnswers().map((answer) {
-              return AnswerButton(
+            ...currentQuestion.shuffledAnswers.map(
+              (answer) => AnswerButton(
                 answer,
                 () {
                   answerQuestion(answer);
-                  //keep in mind it is the individual button that is being mapped here so, each of them has their own unique answer text and ontap function. therefore, on tapping any specific button, it will add the answer text of that very button
+                  //keep in mind it is the individual button that is being mapped here so, each of them has their own unique answer text and onTap function. therefore, on tapping any specific button, it will add the answer text of that button only
                 },
-              );
-            }), //... is a spread operator. Without it, this would be percieved as an iterable which a column doesn't accept as it's child (needs to be a widget). Spread operator unpacks the elements of the iterable.
+              ),
+            ), //... is a spread operator. Without it, this would be percieved as an iterable which a column doesn't accept as it's child (needs to be a widget). Spread operator unpacks the elements of the iterable.
           ],
         ),
       ),
